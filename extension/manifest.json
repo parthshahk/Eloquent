@@ -26,14 +26,5 @@
                 "linux": "Ctrl+Shift+E"
             }
         }
-      },
-
-    "background": {
-        "scripts": ["getMeaning.js"],
-        "persistent": false
-    },
-
-    "permissions" : [
-        "contextMenus"
-    ]
+    }
 }

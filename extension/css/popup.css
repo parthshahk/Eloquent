@@ -1,0 +1,38 @@
+html{
+    min-width: 360px;
+    min-height: 450px;
+    font-size: 100%;
+}
+
+#brand {
+    margin-bottom: 30px
+}
+
+#brand h5 {
+    display: inline;
+}
+
+#brand img {
+    position: relative;
+    top: 20px;
+}
+
+#word {
+    margin-top: 30px;
+    border: 1px solid #ababab;
+    border-radius: 2px;
+    box-shadow: 0px 0px 21px -13px rgba(92,92,92,1);
+    font-size: 1.6rem;
+    padding: 4px 0px 4px 8px;
+    color: #343434;
+    letter-spacing: 0.1rem;
+}
+
+#word:focus {
+    border: 1px solid #ababab;
+    box-shadow: 0px 0px 21px -13px rgba(192,192,192,1);
+}
+
+#credit img{
+    margin-top: 25px;
+}

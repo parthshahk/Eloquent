@@ -9,6 +9,25 @@
         "128": "images/logo_128.png"
     },
 
+    "browser_action": {
+        "default_icon": {
+          "128": "images/logo_128.png"
+        },
+        "default_title": "Eloquent Dictionary",
+        "default_popup": "popup.html"
+    },
+
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "windows": "Ctrl+Shift+E",
+                "mac": "Command+Shift+E",
+                "chromeos": "Ctrl+Shift+E",
+                "linux": "Ctrl+Shift+E"
+            }
+        }
+      },
+
     "background": {
         "scripts": ["getMeaning.js"],
         "persistent": false

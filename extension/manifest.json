@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+    
+    "name": "Eloquent Dictionary",
+    "short_name": "Eloquent Dictionary",
+    "description": "",
+    "icons": {
+        "128": "images/logo_128.png"
+    },
+
+    "background": {
+        "scripts": ["getMeaning.js"],
+        "persistent": false
+    },
+
+    "permissions" : [
+        "contextMenus"
+    ]
+}

@@ -1,0 +1,7 @@
+.vscode
+
+# Word API with API Key
+server/api/config/wordsAPI.php
+
+# Database Credentials
+server/api/config/credentials.php

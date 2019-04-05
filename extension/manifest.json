@@ -26,5 +26,14 @@
                 "linux": "Ctrl+Shift+E"
             }
         }
-    }
+    },
+
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "run_at": "document_end",
+          "css": ["css/eloquentPopper.css"],
+          "js": ["js/eloquentPopper.js"]
+        }
+    ]
 }

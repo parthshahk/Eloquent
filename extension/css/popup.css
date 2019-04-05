@@ -74,6 +74,10 @@ html{
     cursor: pointer;
 }
 
+audio {
+    display: none;
+}
+
 .def-heading{
     font-size: 1rem !important;
     position: relative;

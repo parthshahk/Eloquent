@@ -22,7 +22,7 @@ $(document).ready(()=>{
     
     var markup;
 
-    fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/test?key=4db1f56e-e61d-4755-912b-392c42fbe3da`)
+    fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/eloquent?key=4db1f56e-e61d-4755-912b-392c42fbe3da`)
             .then(res => {
                 return res.json();
             })
@@ -62,6 +62,12 @@ $(document).ready(()=>{
                         }
                     }
 
+                    //Definitions
+                    var definitions = '';
+                    $.each(meaning.shortdef, (key, value) => {
+                        definitions += `<span class="def">:${value}</span>`;
+                    });
+
                     
                     markup = `
 
@@ -74,12 +80,7 @@ $(document).ready(()=>{
                                         <span class="card-title sound"><span class="syla">${headword}</span><span class="voice">${pronunciation}  ${sound}</span></span>
             
                                         <span class="card-title def-heading">Definition of ${meaning.meta.id}</span>
-                                        <p class="defs">
-                                            <span class="def">: marked by forceful and fluent expression</span>
-                                            <span class="eg">an eloquent preacher</span>
-                                            <span class="def">: vividly or movingly expressive or revealing</span>
-                                            <span class="eg">an eloquent monument</span>
-                                        </p>
+                                        <p class="defs">${definitions}</p>
             
                                     </div>
                                 </div>
@@ -87,11 +88,12 @@ $(document).ready(()=>{
                         </div>
 
                     `;
-
-
+                    
 
                     $('#defView').append(markup);
 
+
+                    // Add Sound Event Listener
                     if(typeof meaning.hwi.prs !== 'undefined'){
                         if(typeof meaning.hwi.prs[0].sound !== 'undefined'){
                             $("#t" + meaning.meta.uuid).click(() => {
@@ -99,6 +101,7 @@ $(document).ready(()=>{
                             });
                         }   
                     }
+
 
                     
                 });

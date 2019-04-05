@@ -20,7 +20,7 @@ $('#word').keypress(event => {
 
 $(document).ready(()=>{
     
-    var markup ='';
+    var markup;
 
     fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/test?key=4db1f56e-e61d-4755-912b-392c42fbe3da`)
             .then(res => {
@@ -58,13 +58,12 @@ $(document).ready(()=>{
                                 subdir = 'number';
                             }
                             var url = `https://media.merriam-webster.com/soundc11/${subdir}/${meaning.hwi.prs[0].sound.audio}.wav`;
-                            sound = `<img src="./images/sound.png" onclick="document.getElementById('${meaning.meta.uuid}').play()"><audio id="${meaning.meta.uuid}" src="${url}" ></audio>`;
+                            sound = `<img src="./images/sound.png" id="t${meaning.meta.uuid}"><audio id="${meaning.meta.uuid}" src="${url}" ></audio>`;
                         }
                     }
 
-
-
-                    markup += `
+                    
+                    markup = `
 
                         <div class="row">
                             <div class="col s12">
@@ -91,7 +90,16 @@ $(document).ready(()=>{
 
 
 
-                    $('#defView').html(markup);
+                    $('#defView').append(markup);
+
+                    if(typeof meaning.hwi.prs !== 'undefined'){
+                        if(typeof meaning.hwi.prs[0].sound !== 'undefined'){
+                            $("#t" + meaning.meta.uuid).click(() => {
+                                document.getElementById(meaning.meta.uuid).play();
+                            });
+                        }   
+                    }
+
                     
                 });
 

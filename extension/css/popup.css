@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('fonts/PlayfairDisplay-Regular.otf');
+}
+
 html{
-    min-width: 360px;
+    min-width: 380px;
     min-height: 450px;
     font-size: 100%;
 }
@@ -10,6 +15,8 @@ html{
 
 #brand h5 {
     display: inline;
+    font-family: 'Playfair Display';
+    color: #312121;
 }
 
 #brand img {
@@ -24,8 +31,9 @@ html{
     box-shadow: 0px 0px 21px -13px rgba(92,92,92,1);
     font-size: 1.6rem;
     padding: 4px 0px 4px 8px;
-    color: #343434;
-    letter-spacing: 0.1rem;
+    color: #312121;
+    letter-spacing: 0.09rem;
+    font-family: 'Playfair Display';
 }
 
 #word:focus {
@@ -35,4 +43,55 @@ html{
 
 #credit img{
     margin-top: 25px;
+}
+
+.word {
+    font-family: 'Playfair Display';
+    font-size: 2rem !important;
+}
+
+.word .type {
+    font-size: 0.9rem;
+    padding-left: 8px;
+}
+
+.sound {
+    position: relative;
+    top: -12px;
+    font-size: 1rem !important;
+}
+
+.sound .syla {
+    margin-right: 15px;
+}
+
+.sound .voice img {
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.def-heading{
+    font-size: 1rem !important;
+    position: relative;
+}
+
+.defs {
+    position: relative;
+    top: -8px;
+}
+
+.defs .def {
+    margin-top: 8px;
+}
+
+.defs span {
+    display: block;
+}
+
+.defs .eg {
+    padding-left: 10px;
 }

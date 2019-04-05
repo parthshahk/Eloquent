@@ -1,6 +1,21 @@
 $(document).ready(() => {
     $("#loadView").hide();
     $("#defView").hide();
+    $("#notFound").hide();
+    $("#back").hide();
+
+    $("#back").click(() => {
+
+        $("#defView").hide();
+        $("#notFound").hide();
+        $("#back").hide();
+        $("#homeView").show();
+
+        $("#defView").html("");
+        $("#word").val("");
+        $("#word").focus();
+
+    });
 });
 
 $('#word').keypress(event => {
@@ -30,6 +45,21 @@ function fetchWord(word){
             .then(json => {
                 
                 $.each(json, (key, meaning)=>{
+
+                    if(typeof meaning.meta === 'undefined' || typeof meaning === 'undefined'){
+                        return;
+                    }
+
+                    // Skip if no short defs
+                    if(typeof meaning.shortdef[0] === 'undefined'){
+                        return;
+                    }
+
+                    // Word Type
+                    var type = '';
+                    if(typeof meaning.fl !== 'undefined'){
+                        type = meaning.fl;
+                    }
 
                     // Headword
                     var headword = meaning.hwi.hw;
@@ -77,7 +107,7 @@ function fetchWord(word){
                                 <div class="card grey lighten-4 z-depth-0">
                                     <div class="card-content grey-text text-darken-4">
             
-                                        <span class="card-title word">${meaning.meta.id} <span class="type">${meaning.fl}</span></span>
+                                        <span class="card-title word">${meaning.meta.id} <span class="type">${type}</span></span>
                                         <span class="card-title sound"><span class="syla">${headword}</span><span class="voice">${pronunciation}  ${sound}</span></span>
             
                                         <span class="card-title def-heading">Definition of ${meaning.meta.id}</span>
@@ -111,6 +141,11 @@ function fetchWord(word){
                 $("#defView").show();
                 $("#loadView").hide();
                 $("#credit").show();
+                $("#back").show();
+
+                if($("#defView").html() == ""){
+                    $("#notFound").show();
+                }
 
             })
 }

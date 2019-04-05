@@ -9,6 +9,15 @@ html{
     font-size: 100%;
 }
 
+#back {
+    color: #039be5;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    cursor: pointer;
+    padding-left: 8px;
+}
+
 #brand {
     margin-bottom: 30px
 }

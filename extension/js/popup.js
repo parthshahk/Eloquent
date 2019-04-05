@@ -1,3 +1,5 @@
+var transitionSpeed = 500;
+
 $(document).ready(() => {
     $("#loadView").hide();
     $("#defView").hide();
@@ -6,10 +8,10 @@ $(document).ready(() => {
 
     $("#back").click(() => {
 
-        $("#defView").hide();
         $("#notFound").hide();
+        $("#defView").fadeOut(transitionSpeed);
         $("#back").hide();
-        $("#homeView").show();
+        $("#homeView").fadeIn(transitionSpeed);
 
         $("#defView").html("");
         $("#word").val("");
@@ -28,7 +30,7 @@ $('#word').keypress(event => {
         fetchWord(word);
         $("#homeView").hide();
         $("#credit").hide();
-        $("#loadView").show();
+        $("#loadView").fadeIn(transitionSpeed);
 
     }
 
@@ -138,13 +140,13 @@ function fetchWord(word){
                 });
 
                 
-                $("#defView").show();
+                $("#defView").fadeIn(transitionSpeed);
                 $("#loadView").hide();
-                $("#credit").show();
-                $("#back").show();
+                $("#credit").fadeIn(transitionSpeed);
+                $("#back").fadeIn(transitionSpeed);
 
                 if($("#defView").html() == ""){
-                    $("#notFound").show();
+                    $("#notFound").fadeIn(transitionSpeed);
                 }
 
             })

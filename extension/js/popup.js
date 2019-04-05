@@ -1,3 +1,8 @@
+$(document).ready(() => {
+    $("#loadView").hide();
+    $("#defView").hide();
+});
+
 $('#word').keypress(event => {
 
     var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -5,24 +10,20 @@ $('#word').keypress(event => {
     if(keycode == '13'){
         
         var word = $("#word").val().trim();
-        
-        fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=4db1f56e-e61d-4755-912b-392c42fbe3da`)
-            .then(res => {
-                return res.json();
-            })
-            .then(json => {
-                console.log(json)
-            })
+        fetchWord(word);
+        $("#homeView").hide();
+        $("#credit").hide();
+        $("#loadView").show();
 
     }
 
 });
 
-$(document).ready(()=>{
+function fetchWord(word){
     
     var markup;
 
-    fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/eloquent?key=4db1f56e-e61d-4755-912b-392c42fbe3da`)
+    fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=4db1f56e-e61d-4755-912b-392c42fbe3da`)
             .then(res => {
                 return res.json();
             })
@@ -88,7 +89,7 @@ $(document).ready(()=>{
                         </div>
 
                     `;
-                    
+
 
                     $('#defView').append(markup);
 
@@ -106,8 +107,10 @@ $(document).ready(()=>{
                     
                 });
 
+                
+                $("#defView").show();
+                $("#loadView").hide();
+                $("#credit").show();
 
             })
-
-
-});
+}

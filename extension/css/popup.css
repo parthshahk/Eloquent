@@ -31,7 +31,7 @@ html{
     box-shadow: 0px 0px 21px -13px rgba(92,92,92,1);
     font-size: 1.6rem;
     padding: 4px 0px 4px 8px;
-    color: #312121;
+    color: #212121;
     letter-spacing: 0.09rem;
     font-family: 'Playfair Display';
 }
@@ -43,6 +43,10 @@ html{
 
 #credit img{
     margin-top: 25px;
+}
+
+.spinner-blue, .spinner-blue-only {
+    border-color: #333333;
 }
 
 .word {

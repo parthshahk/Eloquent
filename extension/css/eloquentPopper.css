@@ -1,0 +1,129 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('https://parthshah.xyz/eloquent/hosted/PlayfairDisplay-Regular.otf');
+}
+
+.eqrow {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.eqrow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eqrow .eqcol {
+  float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 0.75rem;
+  min-height: 1px;
+}
+
+.eqrow .eqcol.eqs12 {
+  width: 100%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+.eqcard {
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  border-radius: 2px;
+}
+
+.eqcard .eqcard-title {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.eqcard .eqcard-content p {
+  margin: 0;
+}
+
+.eqcard .eqcard-content {
+  padding: 24px;
+  border-radius: 0 0 2px 2px;
+}
+
+.eqcard .eqcard-content .eqcard-title {
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.eqgrey {
+  background-color: #9e9e9e !important;
+}
+
+.eqgrey.eqlighten-4 {
+  background-color: #f5f5f5 !important;
+}
+
+.eqgrey-text {
+  color: #9e9e9e !important;
+}
+
+.eqgrey-text.eqtext-darken-4 {
+  color: #212121 !important;
+}
+
+.eqword {
+    font-family: 'Playfair Display';
+    font-size: 2rem !important;
+}
+
+.eqword .eqtype {
+    font-size: 0.9rem;
+    padding-left: 8px;
+}
+
+.eqsound {
+    position: relative;
+    top: -12px;
+    font-size: 1rem !important;
+}
+
+.eqsound .eqsyla {
+    margin-right: 15px;
+}
+
+.eqsound .eqvoice img {
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.eqaudio {
+    display: none;
+}
+
+.eqdef-heading{
+    font-size: 1rem !important;
+    position: relative;
+}
+
+.eqdefs {
+    position: relative;
+    top: -8px;
+}
+
+.eqdefs .eqdef {
+    margin-top: 8px;
+}
+
+.eqdefs span {
+    display: block;
+}

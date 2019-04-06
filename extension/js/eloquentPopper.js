@@ -55,29 +55,29 @@ fetchWord = function(){
                                 subdir = 'number';
                             }
                             var url = `https://media.merriam-webster.com/soundc11/${subdir}/${meaning.hwi.prs[0].sound.audio}.wav`;
-                            sound = `<img src="https://parthshah.xyz/eloquent/hosted/sound.png" id="t${meaning.meta.uuid}" onclick="document.getElementById('${meaning.meta.uuid}').play();"><audio id="${meaning.meta.uuid}" src="${url}" ></audio>`;
+                            sound = `<img src="https://parthshah.xyz/eloquent/hosted/sound.png" id="t${meaning.meta.uuid}" onclick="document.getElementById('${meaning.meta.uuid}').play();"><audio class="eqaudio" id="${meaning.meta.uuid}" src="${url}" ></audio>`;
                         }
                     }
 
                     //Definitions
 					var definitions = '';
                     meaning.shortdef.forEach(value => {
-                        definitions += `<span class="def">:${value}</span>`;
+                        definitions += `<span class="eqdef">:${value}</span>`;
                     });
 
                     
                     markup += `
 
-                        <div class="row">
-                            <div class="col s12">
-                                <div class="card grey lighten-4 z-depth-0">
-                                    <div class="card-content grey-text text-darken-4">
+                        <div class="eqrow">
+                            <div class="eqcol eqs12">
+                                <div class="eqcard eqgrey eqlighten-4">
+                                    <div class="eqcard-content eqgrey-text eqtext-darken-4">
             
-                                        <span class="card-title word">${meaning.meta.id} <span class="type">${type}</span></span>
-                                        <span class="card-title sound"><span class="syla">${headword}</span><span class="voice">${pronunciation}  ${sound}</span></span>
+                                        <span class="eqcard-title eqword">${meaning.meta.id} <span class="eqtype">${type}</span></span>
+                                        <span class="eqcard-title eqsound"><span class="eqsyla">${headword}</span><span class="eqvoice">${pronunciation}  ${sound}</span></span>
             
-                                        <span class="card-title def-heading">Definition of ${meaning.meta.id}</span>
-                                        <p class="defs">${definitions}</p>
+                                        <span class="eqcard-title eqdef-heading">Definition of ${meaning.meta.id}</span>
+                                        <p class="eqdefs">${definitions}</p>
             
                                     </div>
                                 </div>

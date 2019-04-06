@@ -32,8 +32,8 @@
         {
           "matches": ["<all_urls>"],
           "run_at": "document_end",
-          "css": ["css/eloquentPopper.css"],
-          "js": ["js/eloquentPopper.js"]
+          "css": ["css/eloquentPopper.css", "css/tingle.min.css"],
+          "js": ["js/eloquentPopper.js", "js/tingle.min.js"]
         }
     ]
 }
